@@ -21,9 +21,11 @@ function onFormInput() {
 
 function onFormSubmit(event) {
   event.preventDefault();
-  formData = Object.fromEntries(new FormData(form));
+  // formData = Object.fromEntries(new FormData(form));
+  const email = formData.email.trim();
+  const message = formData.message.trim();
 
-  if (formData.email === '' || formData.message === '') {
+  if (email === '' || message === '') {
     alert('Fill please all fields');
     return;
   }
